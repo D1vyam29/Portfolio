@@ -29,7 +29,7 @@ flutter:
     - assets/images/dino/
     - assets/images/ground/
     - assets/images/obstacles/
-    - assets/sounds/
+    # - assets/sounds/
 
   fonts:
     - family: DinoFont
