@@ -84,11 +84,11 @@ class DinoGame extends FlameGame with HasCollisionDetection, TapDetector {
   final resumeSegments = [
     "Divyam Sharma | Parwanoo HP | Divyams584@gmail.com | 8278800294",
     "Education:\n• CSE, Roorkee Institute of Technology (2018‑22)\n• +2 & 10th – Eicher School, Parwanoo",
-    // "Skills:\n• Dart, Flutter, Firebase, Git\n• DSA, REST APIs",
-    // "Experience – Lepton Software:\n• Junior Dev – UI/UX, State Mgmt, API Integration",
-    // "Smart Inventory – GIS Fiber Network Management",
-    // "SmartOPPS – Telecom Workforce Management",
-    // "SmartFeasibility – Tower Optimization",
+    "Skills:\n• Dart, Flutter, Firebase, Git\n• DSA, REST APIs",
+    "Experience – Lepton Software:\n• Junior Dev – UI/UX, State Mgmt, API Integration",
+    "Smart Inventory – GIS Fiber Network Management",
+    "SmartOPPS – Telecom Workforce Management",
+    "SmartFeasibility – Tower Optimization",
   ];
 
   final linkedinLink = "https://www.linkedin.com/in/divyam-sharma-4627b816b/";
