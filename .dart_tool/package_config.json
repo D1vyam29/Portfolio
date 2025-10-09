@@ -3,13 +3,13 @@
   "packages": [
     {
       "name": "async",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/async-2.12.0",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/async-2.13.0",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "audioplayers",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/audioplayers-6.5.0",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/audioplayers-6.5.1",
       "packageUri": "lib/",
       "languageVersion": "3.6"
     },
@@ -87,7 +87,7 @@
     },
     {
       "name": "fake_async",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/fake_async-1.3.2",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/fake_async-1.3.3",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -111,21 +111,21 @@
     },
     {
       "name": "flame",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/flame-1.30.1",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/flame-1.32.0",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.8"
     },
     {
       "name": "flame_audio",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/flame_audio-2.11.8",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/flame_audio-2.11.10",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.8"
     },
     {
       "name": "flutter",
       "rootUri": "file:///Users/lepton/Developer/flutter/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.8"
     },
     {
       "name": "flutter_lints",
@@ -137,17 +137,17 @@
       "name": "flutter_test",
       "rootUri": "file:///Users/lepton/Developer/flutter/packages/flutter_test",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.8"
     },
     {
       "name": "flutter_web_plugins",
       "rootUri": "file:///Users/lepton/Developer/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.8"
     },
     {
       "name": "http",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/http-1.4.0",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/http-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -159,19 +159,19 @@
     },
     {
       "name": "leak_tracker",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/leak_tracker-10.0.8",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/leak_tracker-11.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "leak_tracker_flutter_testing",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/leak_tracker_flutter_testing-3.0.9",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/leak_tracker_flutter_testing-3.0.10",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "leak_tracker_testing",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/leak_tracker_testing-3.0.1",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/leak_tracker_testing-3.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -219,15 +219,15 @@
     },
     {
       "name": "path_provider_android",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/path_provider_android-2.2.17",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/path_provider_android-2.2.19",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.7"
     },
     {
       "name": "path_provider_foundation",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/path_provider_foundation-2.4.1",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/path_provider_foundation-2.4.2",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.7"
     },
     {
       "name": "path_provider_linux",
@@ -263,7 +263,7 @@
       "name": "sky_engine",
       "rootUri": "file:///Users/lepton/Developer/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.8"
     },
     {
       "name": "source_span",
@@ -297,9 +297,9 @@
     },
     {
       "name": "synchronized",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/synchronized-3.3.1",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/synchronized-3.4.0",
       "packageUri": "lib/",
-      "languageVersion": "3.7"
+      "languageVersion": "3.8"
     },
     {
       "name": "term_glyph",
@@ -309,7 +309,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/test_api-0.7.4",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/test_api-0.7.6",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -327,15 +327,15 @@
     },
     {
       "name": "url_launcher_android",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/url_launcher_android-6.3.16",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/url_launcher_android-6.3.24",
       "packageUri": "lib/",
-      "languageVersion": "3.6"
+      "languageVersion": "3.9"
     },
     {
       "name": "url_launcher_ios",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/url_launcher_ios-6.3.3",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/url_launcher_ios-6.3.4",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.7"
     },
     {
       "name": "url_launcher_linux",
@@ -345,9 +345,9 @@
     },
     {
       "name": "url_launcher_macos",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/url_launcher_macos-3.2.2",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/url_launcher_macos-3.2.3",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.7"
     },
     {
       "name": "url_launcher_platform_interface",
@@ -375,9 +375,9 @@
     },
     {
       "name": "vector_math",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/vector_math-2.1.4",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/vector_math-2.2.0",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "3.1"
     },
     {
       "name": "visibility_detector",
@@ -387,9 +387,9 @@
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/vm_service-14.3.1",
+      "rootUri": "file:///Users/lepton/.pub-cache/hosted/pub.dev/vm_service-15.0.2",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.5"
     },
     {
       "name": "web",
@@ -410,10 +410,9 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2025-09-10T20:55:22.980089Z",
   "generator": "pub",
-  "generatorVersion": "3.7.0",
+  "generatorVersion": "3.9.2",
   "flutterRoot": "file:///Users/lepton/Developer/flutter",
-  "flutterVersion": "3.29.0",
+  "flutterVersion": "3.35.5",
   "pubCache": "file:///Users/lepton/.pub-cache"
 }
