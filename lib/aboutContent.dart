@@ -61,46 +61,86 @@ class ProjectsContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 20,
-      runSpacing: 20,
-      children: projects.map((proj) {
-        return Container(
-          width:
-              MediaQuery.of(context).size.width > 800 ? 300 : double.infinity,
-          child: Card(
-            color: Colors.grey[850],
-            elevation: 3,
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Image.asset(proj['image']!,
-                    height: 160, width: double.infinity, fit: BoxFit.cover),
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(proj['title']!,
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold)),
-                      SizedBox(height: 8),
-                      Text(proj['desc']!,
-                          style: TextStyle(color: Colors.grey[300]))
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final availableWidth = constraints.maxWidth;
+        // If available width is small (e.g. inside the 600px popup on a phone or desktop),
+        // we essentially just want to take up the full available width.
+        // On very wide containers, we might want to show multiple columns, but here
+        // our parent (InfoOverlay) limits us to 600px anyway.
+        // So we should just take availableWidth with some padding.
+
+        // We'll use a single column layout for consistency within the detail
+        // cards, as 600px is "mobile-like" or "tablet-like" width.
+
+        return Wrap(
+          spacing: 20,
+          runSpacing: 20,
+          alignment: WrapAlignment.center,
+          children: projects.map((proj) {
+            return Container(
+              // Take full width minus padding, or a fixed reasonable width if strictly enforced
+              // InfoOverlay adds padding (16 or 24).
+              // So constraints.maxWidth is the actual content width.
+              width: availableWidth,
+              child: Card(
+                color: Colors.grey[850],
+                elevation: 3,
+                clipBehavior: Clip.antiAlias,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Image.asset(
+                      proj['image']!,
+                      height: 160,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          height: 160,
+                          color: Colors.grey[800],
+                          child: const Center(
+                              child: Icon(Icons.image, color: Colors.white54)),
+                        );
+                      },
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            proj['title']!,
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            proj['desc']!,
+                            style: TextStyle(
+                              color: Colors.grey[300],
+                              fontSize: 14,
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            );
+          }).toList(),
         );
-      }).toList(),
+      },
     );
   }
 }
 
-class ContactContent extends StatelessWidget {
+class OldContactContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
