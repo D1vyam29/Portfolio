@@ -27,7 +27,7 @@ jobs:
         run: flutter pub get
       
       - name: Run tests
-        run: flutter test
+        run: dart test
       
       - name: Build Flutter web
         run: flutter build web --release --base-href "/Portfolio/"
