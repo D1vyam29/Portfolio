@@ -1,23 +1,21 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flame_test/flame_test.dart';
 import 'package:portfolio/game/dino_game.dart';
 import 'package:portfolio/data/portfolio_data.dart';
 
 void main() {
+  final flameTester = FlameTester(() => DinoGame());
+
   group('DinoGame Logic Tests', () {
-    late DinoGame game;
-
-    setUp(() {
-      game = DinoGame();
-    });
-
-    test('Initial game state should be stopped', () {
+    flameTester.test('Initial game state should be stopped', (game) async {
       expect(game.isStarted, isFalse);
       expect(game.isGameOver, isFalse);
       expect(game.jumpCount, equals(0));
       expect(game.score, equals(0));
     });
 
-    test('startGame() should initialize game state correctly', () {
+    flameTester.test('startGame() should initialize game state correctly',
+        (game) async {
       game.startGame();
       expect(game.isStarted, isTrue);
       expect(game.isGameOver, isFalse);
@@ -25,15 +23,15 @@ void main() {
       expect(game.score, equals(0));
     });
 
-    test('gameOver() should set correct flags', () {
+    flameTester.test('gameOver() should set correct flags', (game) async {
       game.startGame();
       game.gameOver();
       expect(game.isGameOver, isTrue);
     });
 
-    test(
+    flameTester.test(
         'continueAfterContact() should reset jumpCount and keep score visibility',
-        () {
+        (game) async {
       game.startGame();
       game.continueAfterContact();
 
@@ -42,7 +40,8 @@ void main() {
       expect(game.isGameOver, isFalse);
     });
 
-    test('Dino jump logic should set initial velocity', () {
+    flameTester.test('Dino jump logic should set initial velocity',
+        (game) async {
       game.startGame();
       game.jumpAction();
       expect(game.isJumping, isTrue);
@@ -50,8 +49,6 @@ void main() {
     });
 
     test('Resume segments logic should match PortfolioData length', () {
-      // The game iterates through segments until the last one (Contact)
-      // This test ensures the game's logic for segments is consistent with the data
       expect(PortfolioData.resumeSegments.length, greaterThan(0));
     });
   });

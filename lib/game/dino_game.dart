@@ -70,7 +70,7 @@ class DinoGame extends FlameGame
   bool readyToSpawn = true;
   bool pendingOverlay = false; // Flag to show overlay after landing
   int score = 0; // Points earned from jumping obstacles
-  late TextComponent scoreDisplay;
+  TextComponent? scoreDisplay;
   bool scoreVisible = false; // Score only shows after Contact overlay
 
   @override
@@ -141,7 +141,9 @@ class DinoGame extends FlameGame
     // Make score visible for continued gameplay
     if (!scoreVisible) {
       scoreVisible = true;
-      add(scoreDisplay); // Add score display to game
+      if (scoreDisplay != null) {
+        add(scoreDisplay!); // Add score display to game
+      }
     }
 
     // Reset for next playthrough
@@ -195,30 +197,30 @@ class DinoGame extends FlameGame
         velocity.y = 0;
         isJumping = false;
 
-      // Show pending overlay when dino lands
-      if (pendingOverlay) {
-        pendingOverlay = false;
-        if (jumpCount < PortfolioData.resumeSegments.length - 1) {
-          pauseEngine();
-          onGameStateChanged?.call(false);
-          final segmentKey = PortfolioData.resumeSegments[jumpCount];
-          overlays.add(segmentKey);
-          jumpCount++;
+        // Show pending overlay when dino lands
+        if (pendingOverlay) {
+          pendingOverlay = false;
+          if (jumpCount < PortfolioData.resumeSegments.length - 1) {
+            pauseEngine();
+            onGameStateChanged?.call(false);
+            final segmentKey = PortfolioData.resumeSegments[jumpCount];
+            overlays.add(segmentKey);
+            jumpCount++;
 
-          // Notify map to move to next stop
-          onSegmentCompleted?.call(jumpCount);
-        } else if (jumpCount == PortfolioData.resumeSegments.length - 1) {
-          jumpCount++;
-          dinoExiting = true;
-          readyToSpawn = false;
-          children
-              .whereType<ObstacleComponent>()
-              .toList()
-              .forEach((c) => c.removeFromParent());
+            // Notify map to move to next stop
+            onSegmentCompleted?.call(jumpCount);
+          } else if (jumpCount == PortfolioData.resumeSegments.length - 1) {
+            jumpCount++;
+            dinoExiting = true;
+            readyToSpawn = false;
+            children
+                .whereType<ObstacleComponent>()
+                .toList()
+                .forEach((c) => c.removeFromParent());
+          }
         }
       }
     }
-  }
 
     // Spawning
     if (readyToSpawn && children.whereType<ObstacleComponent>().isEmpty) {
@@ -236,9 +238,9 @@ class DinoGame extends FlameGame
         c.isCleared = true;
 
         // Award points if score is visible (after first Contact)
-        if (scoreVisible) {
+        if (scoreVisible && scoreDisplay != null) {
           score++;
-          scoreDisplay.text = 'Score: $score';
+          scoreDisplay!.text = 'Score: $score';
         }
 
         showInfoOverlay();
