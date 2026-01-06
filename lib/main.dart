@@ -128,6 +128,19 @@ void main() {
                 },
               ),
             ),
+            // Layer 4: Version Tag
+            Positioned(
+              bottom: 10,
+              right: 10,
+              child: Text(
+                'v1.0.1 - Features Deployment Test',
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ],
         ),
       ),
