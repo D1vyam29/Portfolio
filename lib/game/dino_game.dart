@@ -218,6 +218,7 @@ class DinoGame extends FlameGame
         }
       }
     }
+  }
 
     // Spawning
     if (readyToSpawn && children.whereType<ObstacleComponent>().isEmpty) {
