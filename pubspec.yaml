@@ -19,6 +19,7 @@ dependencies:
   url_launcher: ^6.2.0
   flutter_map: ^8.2.2
   latlong2: ^0.9.1
+  test: ^1.26.2
 
 dev_dependencies:
   flutter_test:
