@@ -11,7 +11,7 @@ import 'package:flutter/services.dart';
 
 class DinoGame extends FlameGame
     with HasCollisionDetection, TapCallbacks, KeyboardEvents {
-  late Dino dino;
+  Dino? dino;
   final Function(int)? onSegmentCompleted;
   final Function(bool)? onGameStateChanged;
 
@@ -82,7 +82,7 @@ class DinoGame extends FlameGame
 
     // Add Dino
     dino = Dino()..position = Vector2(50, gameFloorY);
-    await add(dino);
+    await add(dino!);
 
     // Add Ground (Scrolling)
     final ground = ScrollingGround(scrollSpeed: 200)
@@ -115,7 +115,7 @@ class DinoGame extends FlameGame
     jumpCount = 0;
     readyToSpawn = true;
     velocity.setZero();
-    dino.position = Vector2(50, gameFloorY);
+    dino?.position = Vector2(50, gameFloorY);
 
     // Reset external map
     onSegmentCompleted?.call(0);
@@ -150,7 +150,7 @@ class DinoGame extends FlameGame
     dinoExiting = false;
     pendingOverlay = false;
     velocity.setZero();
-    dino.position = Vector2(50, gameFloorY);
+    dino?.position = Vector2(50, gameFloorY);
 
     // Remove all obstacles
     children
@@ -170,9 +170,9 @@ class DinoGame extends FlameGame
     if (!isStarted || isGameOver) return;
 
     // Handle dino exit animation
-    if (dinoExiting) {
-      dino.position.x += 300 * dt; // Move dino to the right
-      if (dino.position.x > size.x + 100) {
+    if (dinoExiting && dino != null) {
+      dino!.position.x += 300 * dt; // Move dino to the right
+      if (dino!.position.x > size.x + 100) {
         dinoExiting = false;
         pauseEngine();
         onGameStateChanged?.call(false);
@@ -187,12 +187,13 @@ class DinoGame extends FlameGame
 
     // Physics
     velocity += gravity * dt;
-    dino.position += velocity * dt;
+    if (dino != null) {
+      dino!.position += velocity * dt;
 
-    if (dino.position.y >= gameFloorY) {
-      dino.position.y = gameFloorY;
-      velocity.y = 0;
-      isJumping = false;
+      if (dino!.position.y >= gameFloorY) {
+        dino!.position.y = gameFloorY;
+        velocity.y = 0;
+        isJumping = false;
 
       // Show pending overlay when dino lands
       if (pendingOverlay) {
@@ -228,7 +229,9 @@ class DinoGame extends FlameGame
 
     // Collision & Scoring
     for (var c in children.whereType<ObstacleComponent>()) {
-      if (!c.isCleared && c.position.x + c.width < dino.position.x) {
+      if (dino != null &&
+          !c.isCleared &&
+          c.position.x + c.width < dino!.position.x) {
         c.isCleared = true;
 
         // Award points if score is visible (after first Contact)
@@ -240,7 +243,7 @@ class DinoGame extends FlameGame
         showInfoOverlay();
       }
 
-      if (c.toRect().overlaps(dino.toRect())) {
+      if (dino != null && c.toRect().overlaps(dino!.toRect())) {
         gameOver();
       }
     }
