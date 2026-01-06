@@ -1,8 +1,9 @@
 import 'package:flame/components.dart';
 import 'package:flame/collisions.dart';
+import 'package:portfolio/game/dino_game.dart';
 
 class Dino extends SpriteAnimationComponent
-    with CollisionCallbacks, HasGameRef {
+    with CollisionCallbacks, HasGameReference<DinoGame> {
   Dino() : super(size: Vector2(80, 80), anchor: Anchor.bottomLeft);
 
   @override
@@ -11,7 +12,7 @@ class Dino extends SpriteAnimationComponent
     // Frames: [Stand, Blink, Run1, Run2, Crash, Restart]
     // Run animation corresponds to frames 2 and 3 (0-indexed).
 
-    final spriteSheet = await gameRef.images.load('dino/dino_spritesheet.png');
+    final spriteSheet = await game.images.load('dino/dino_spritesheet.png');
 
     animation = SpriteAnimation.fromFrameData(
       spriteSheet,

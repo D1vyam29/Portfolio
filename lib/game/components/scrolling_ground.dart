@@ -1,6 +1,8 @@
 import 'package:flame/components.dart';
+import 'package:portfolio/game/dino_game.dart';
 
-class ScrollingGround extends PositionComponent with HasGameRef {
+class ScrollingGround extends PositionComponent
+    with HasGameReference<DinoGame> {
   final double scrollSpeed;
   late SpriteComponent tile1;
   late SpriteComponent tile2;
@@ -9,7 +11,7 @@ class ScrollingGround extends PositionComponent with HasGameRef {
 
   @override
   Future<void> onLoad() async {
-    final groundImage = await gameRef.images.load('ground/ground_horizon.png');
+    final groundImage = await game.images.load('ground/ground_horizon.png');
     final sprite = Sprite(groundImage);
 
     // Create two tiles for seamless scrolling with sprite set immediately

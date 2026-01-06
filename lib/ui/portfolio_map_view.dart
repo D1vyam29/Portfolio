@@ -133,7 +133,7 @@ class _PortfolioMapViewState extends State<PortfolioMapView>
             Polyline(
               points: _stops,
               strokeWidth: 4.0,
-              color: Colors.blue.withOpacity(0.7),
+              color: Colors.blue.withValues(alpha: 0.7),
             ),
           ],
         ),

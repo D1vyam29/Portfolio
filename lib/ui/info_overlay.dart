@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-export 'package:portfolio/aboutContent.dart';
+export 'package:portfolio/about_content.dart';
 
 class InfoOverlay extends StatelessWidget {
   final String title;
@@ -8,12 +8,12 @@ class InfoOverlay extends StatelessWidget {
   final VoidCallback onClose;
 
   const InfoOverlay({
-    Key? key,
+    super.key,
     required this.title,
     required this.content,
     this.customWidget,
     required this.onClose,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class InfoOverlay extends StatelessWidget {
           maxHeight: screenSize.height * 0.85,
         ),
         child: Card(
-          color: Colors.grey[900]!.withOpacity(0.95),
+          color: Colors.grey[900]!.withValues(alpha: 0.95),
           elevation: 8,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),

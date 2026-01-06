@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactContent extends StatelessWidget {
-  final Map<String, String> links = {
+  static const Map<String, String> _links = {
     'LinkedIn': 'https://linkedin.com/in/divyamsharma',
     'GitHub': 'https://github.com/D1vyam29',
     'Email': 'mailto:Divyams584@gmail.com',
   };
+
+  const ContactContent({super.key});
 
   Future<void> _launchURL(String url) async {
     final Uri uri = Uri.parse(url);
@@ -19,7 +21,7 @@ class ContactContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: links.entries.map((entry) {
+      children: _links.entries.map((entry) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 12.0),
           child: ElevatedButton.icon(

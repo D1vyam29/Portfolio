@@ -46,7 +46,7 @@ void main() {
 
             // Layer 2: Black overlay for contrast (Optional, low opacity)
             Positioned.fill(
-              child: Container(color: Colors.white.withOpacity(0.5)),
+              child: Container(color: Colors.white.withValues(alpha: 0.5)),
             ),
 
             // Layer 3: The Game (Foreground)
@@ -71,7 +71,7 @@ void main() {
                   'Skills': (context, _) => InfoOverlay(
                       title: PortfolioData.data['Skills']['title'],
                       content: PortfolioData.data['Skills']['content'],
-                      customWidget: SkillsContent(),
+                      customWidget: const SkillsContent(),
                       onClose: () {
                         _game.overlays.remove('Skills');
                         _game.resumeGame();
@@ -86,7 +86,7 @@ void main() {
                   'Projects': (context, _) => InfoOverlay(
                       title: "Projects",
                       content: "",
-                      customWidget: ProjectsContent(),
+                      customWidget: const ProjectsContent(),
                       onClose: () {
                         _game.overlays.remove('Projects');
                         _game.resumeGame();
@@ -94,7 +94,7 @@ void main() {
                   'Contact': (context, _) => InfoOverlay(
                       title: PortfolioData.data['Contact']['title'],
                       content: PortfolioData.data['Contact']['content'],
-                      customWidget: ContactContent(),
+                      customWidget: const ContactContent(),
                       onClose: () {
                         _game.overlays.remove('Contact');
                         _game
@@ -129,7 +129,7 @@ void main() {
               ),
             ),
             // Layer 4: Version Tag
-            Positioned(
+            const Positioned(
               bottom: 10,
               right: 10,
               child: Text(

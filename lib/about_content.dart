@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AboutContent extends StatelessWidget {
+  const AboutContent({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Text(
@@ -12,7 +14,7 @@ class AboutContent extends StatelessWidget {
 }
 
 class SkillsContent extends StatelessWidget {
-  final skills = [
+  static const _skills = [
     "Dart & Flutter",
     "Provider / Riverpod / BLoC",
     "REST API Integration",
@@ -21,16 +23,18 @@ class SkillsContent extends StatelessWidget {
     "Clean Architecture"
   ];
 
+  const SkillsContent({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
       spacing: 16,
       runSpacing: 16,
-      children: skills
+      children: _skills
           .map((skill) => Chip(
                 label: Text(skill),
                 backgroundColor: Colors.grey[800],
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: const TextStyle(color: Colors.white),
               ))
           .toList(),
     );
@@ -38,7 +42,7 @@ class SkillsContent extends StatelessWidget {
 }
 
 class ProjectsContent extends StatelessWidget {
-  final projects = [
+  static const _projects = [
     {
       'title': 'Smart Inventory',
       'desc':
@@ -59,6 +63,8 @@ class ProjectsContent extends StatelessWidget {
     },
   ];
 
+  const ProjectsContent({super.key});
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -77,8 +83,8 @@ class ProjectsContent extends StatelessWidget {
           spacing: 20,
           runSpacing: 20,
           alignment: WrapAlignment.center,
-          children: projects.map((proj) {
-            return Container(
+          children: _projects.map((proj) {
+            return SizedBox(
               // Take full width minus padding, or a fixed reasonable width if strictly enforced
               // InfoOverlay adds padding (16 or 24).
               // So constraints.maxWidth is the actual content width.
@@ -141,6 +147,8 @@ class ProjectsContent extends StatelessWidget {
 }
 
 class OldContactContent extends StatelessWidget {
+  const OldContactContent({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -160,7 +168,7 @@ class OldContactContent extends StatelessWidget {
       child: Row(
         children: [
           Icon(icon, color: Colors.cyan),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Text(text)
         ],
       ),

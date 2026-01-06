@@ -1,8 +1,10 @@
 import 'package:flame/components.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/effects.dart';
+import 'package:portfolio/game/dino_game.dart';
 
-class ObstacleComponent extends SpriteComponent with HasGameRef {
+class ObstacleComponent extends SpriteComponent
+    with HasGameReference<DinoGame> {
   bool isCleared = false;
   final double speed;
 
@@ -12,7 +14,7 @@ class ObstacleComponent extends SpriteComponent with HasGameRef {
   Future<void> onLoad() async {
     // Sprite Sheet: 204x70. 6 frames => approx 34x70 per cactus.
     // Taking the first one.
-    final image = await gameRef.images.load('obstacles/cactus_small.png');
+    final image = await game.images.load('obstacles/cactus_small.png');
     sprite =
         Sprite(image, srcPosition: Vector2(0, 0), srcSize: Vector2(34, 70));
 

@@ -1,8 +1,9 @@
 import 'dart:ui';
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/game/dino_game.dart';
 
-class PortfolioMap extends PositionComponent with HasGameRef {
+class PortfolioMap extends PositionComponent with HasGameReference<DinoGame> {
   List<Vector2> stopPositions = [];
   int currentStopIndex = 0;
   Vector2 _carPosition = Vector2.zero();
