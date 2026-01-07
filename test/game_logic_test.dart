@@ -4,6 +4,8 @@ import 'package:portfolio/game/dino_game.dart';
 import 'package:portfolio/data/portfolio_data.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   group('DinoGame Logic Tests', () {
     testWithGame('Initial game state should be stopped', () => DinoGame(),
         (game) async {
