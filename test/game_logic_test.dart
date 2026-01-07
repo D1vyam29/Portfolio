@@ -7,6 +7,7 @@ void main() {
   group('DinoGame Logic Tests', () {
     testWithGame('Initial game state should be stopped', () => DinoGame(),
         (game) async {
+      await game.ready();
       expect(game.isStarted, isFalse);
       expect(game.isGameOver, isFalse);
       expect(game.jumpCount, equals(0));
@@ -16,6 +17,7 @@ void main() {
     testWithGame(
         'startGame() should initialize game state correctly', () => DinoGame(),
         (game) async {
+      await game.ready();
       game.startGame();
       expect(game.isStarted, isTrue);
       expect(game.isGameOver, isFalse);
@@ -25,6 +27,7 @@ void main() {
 
     testWithGame('gameOver() should set correct flags', () => DinoGame(),
         (game) async {
+      await game.ready();
       game.startGame();
       game.gameOver();
       expect(game.isGameOver, isTrue);
@@ -33,6 +36,7 @@ void main() {
     testWithGame(
         'continueAfterContact() should reset jumpCount and keep score visibility',
         () => DinoGame(), (game) async {
+      await game.ready();
       game.startGame();
       game.continueAfterContact();
 
@@ -44,6 +48,7 @@ void main() {
     testWithGame(
         'Dino jump logic should set initial velocity', () => DinoGame(),
         (game) async {
+      await game.ready();
       game.startGame();
       game.jumpAction();
       expect(game.isJumping, isTrue);

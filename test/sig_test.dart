@@ -5,6 +5,8 @@ void main() {
   testWithGame(
     'test',
     () => DinoGame(),
-    (game) async {},
+    (game) async {
+      await game.ready();
+    },
   );
 }
