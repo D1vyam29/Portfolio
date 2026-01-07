@@ -31,8 +31,13 @@ void main() {
         (game) async {
       await game.ready();
       game.startGame();
+      expect(game.isStarted, isTrue);
+      expect(game.isGameOver, isFalse);
+
       game.gameOver();
+
       expect(game.isGameOver, isTrue);
+      expect(game.isStarted, isTrue); // startGame doesn't change this
     });
 
     testWithGame(
