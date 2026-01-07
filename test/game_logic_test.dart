@@ -4,17 +4,17 @@ import 'package:portfolio/game/dino_game.dart';
 import 'package:portfolio/data/portfolio_data.dart';
 
 void main() {
-  final flameTester = FlameTester(() => DinoGame());
-
   group('DinoGame Logic Tests', () {
-    flameTester.test('Initial game state should be stopped', (game) async {
+    testWithGame('Initial game state should be stopped', () => DinoGame(),
+        (game) async {
       expect(game.isStarted, isFalse);
       expect(game.isGameOver, isFalse);
       expect(game.jumpCount, equals(0));
       expect(game.score, equals(0));
     });
 
-    flameTester.test('startGame() should initialize game state correctly',
+    testWithGame(
+        'startGame() should initialize game state correctly', () => DinoGame(),
         (game) async {
       game.startGame();
       expect(game.isStarted, isTrue);
@@ -23,15 +23,16 @@ void main() {
       expect(game.score, equals(0));
     });
 
-    flameTester.test('gameOver() should set correct flags', (game) async {
+    testWithGame('gameOver() should set correct flags', () => DinoGame(),
+        (game) async {
       game.startGame();
       game.gameOver();
       expect(game.isGameOver, isTrue);
     });
 
-    flameTester.test(
+    testWithGame(
         'continueAfterContact() should reset jumpCount and keep score visibility',
-        (game) async {
+        () => DinoGame(), (game) async {
       game.startGame();
       game.continueAfterContact();
 
@@ -40,7 +41,8 @@ void main() {
       expect(game.isGameOver, isFalse);
     });
 
-    flameTester.test('Dino jump logic should set initial velocity',
+    testWithGame(
+        'Dino jump logic should set initial velocity', () => DinoGame(),
         (game) async {
       game.startGame();
       game.jumpAction();
